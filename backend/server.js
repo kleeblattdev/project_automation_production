@@ -2,7 +2,12 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import "./config/config.js";
-import { readFile, updateKontostand, updateWorkload } from "./helper.js";
+import {
+	buyComic,
+	readFile,
+	updateKontostand,
+	updateWorkload,
+} from "./helper.js";
 
 const PORT = process.env.PORT || 9999;
 
@@ -37,6 +42,11 @@ app.post("/api/v1/sell", (req, res) => {
 app.post("/api/v1/humans/:resource", (req, res) => {
 	const resource = req.params.resource;
 	updateWorkload(resource);
+	res.end();
+});
+
+app.post("/api/v1/buy", (req, res) => {
+	buyComic();
 	res.end();
 });
 

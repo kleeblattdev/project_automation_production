@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 //compenents import
 import Sell from "../components/Sell";
 import AddResource from "../components/AddResource";
+import BuyComics from "../components/BuyComics";
 
 const Home = () => {
 	const [kontostand, setKontostand] = useState();
@@ -45,6 +46,7 @@ const Home = () => {
 				</div>
 			</section>
 			<Sell setRefresh={setRefresh} />
+			<BuyComics setRefresh={setRefresh} />
 		</main>
 	);
 };

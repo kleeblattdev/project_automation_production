@@ -48,3 +48,14 @@ export const updateWorkload = (resource) => {
 		});
 	});
 };
+
+export const buyComic = () => {
+	return new Promise((resolve, reject) => {
+		readFile().then((data) => {
+			data.kontostand = data.kontostand - 10000;
+			writeFile(data)
+				.then(() => resolve(data))
+				.catch((err) => reject(err));
+		});
+	});
+};

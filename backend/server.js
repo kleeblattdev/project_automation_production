@@ -12,7 +12,7 @@ app.use(
 	morgan(":method :url :status :res[content-length] - :response-time ms")
 );
 
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5137" }));
 
 app.use(express.json());
 

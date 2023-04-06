@@ -1,4 +1,16 @@
 import fs from "fs";
+/* import fs from "fs/promises"; */
+
+/* export async function readFile() {
+	try {
+		const filePath = "./datamodel.json";
+		const contents = await fs.readFile(filePath, { encoding: "utf8" });
+		const data = await JSON.parse(contents.toString());
+		return data;
+	} catch (err) {
+		console.log(err);
+	}
+} */
 
 export const readFile = () => {
 	return new Promise((resolve, reject) => {
